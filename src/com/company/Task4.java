@@ -28,14 +28,13 @@ public class Task4 {
     public static void exercise02() {
         System.out.println("Добрый день!");
         System.out.println("Наш помощник расчитает сумму всех нечетных чисел из интервала 3....100:");
-        int i = 3;
+        int number = 3;
         int sum = 0;
-        while (i < 100) {
-            int number = i;
+        while (number < 100) {
             if (number % 2 != 0) {
                 sum += number;
             }
-            i++;
+            number++;
         }
         System.out.println("Сумма всех нечетных чисел из интервала 3....100 равна: " + sum);
     }
@@ -48,10 +47,15 @@ public class Task4 {
     }
 
     // Задача 4. (Написать метод, который принимает число и возвращает true если оно простое и false - если нет)
+
+    /***
+     * Проверяет делится ли число на другие числа кроме 1 и самого себя
+     * @param number - вводимое число пользователем
+     */
     public static boolean isPrimeNumber (int number) {
         int i = 2;
-        while (i < (number - 1)) {
-            if (number % i != 0) {
+        while (i < number) {
+            if (number % i == 0) {
                 return false;
             }
             i++;
@@ -75,15 +79,29 @@ public class Task4 {
     // Дополнительные задачи:
 
     // Задача 1. (Написать метод, который принимает произвольно целое число и возвращает сумму всех его цифр)
-    public static void test () {
-
+    public static boolean arbitraryNumber (int number) {
+        int num = 0;
+        int sum = 0;
+        while () {
+            if (number % 10 != 0) {
+                num = number % 10;
+                sum += num;
+            }
+            num++;
+        }
+        return false;
     }
 
     public static void exercise001 () {
-
+        System.out.println("Добрый день!");
+        System.out.println("Наш помощник посчитает сумму всех цифр введенного Вами числа");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите, пожалуйста, число:");
+        int number = sc.nextInt();
+            System.out.println("Сумма всех цифр введенного Вами числа = " + arbitraryNumber(number));
     }
 
     public static void main(String[] args) {
-        exercise04();
+        exercise001();
     }
 }
