@@ -51,6 +51,7 @@ public class Task4 {
     /***
      * Проверяет делится ли число на другие числа кроме 1 и самого себя
      * @param number - вводимое число пользователем
+     * @return - простое число или нет
      */
     public static boolean isPrimeNumber (int number) {
         int i = 2;
@@ -79,6 +80,12 @@ public class Task4 {
     // Дополнительные задачи:
 
     // Задача 1. (Написать метод, который принимает произвольно целое число и возвращает сумму всех его цифр)
+
+    /***
+     * Принимает произвольно целое число и возвращает сумму всех его цифр
+     * @param startNumber - вводимое число пользователем
+     * @return - сумма всех цифр введенного числа
+     */
     public static int getSomeOfDigit (int startNumber) {
         int number = startNumber;
         int sum = 0;
