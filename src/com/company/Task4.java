@@ -79,17 +79,15 @@ public class Task4 {
     // Дополнительные задачи:
 
     // Задача 1. (Написать метод, который принимает произвольно целое число и возвращает сумму всех его цифр)
-    public static boolean arbitraryNumber (int number) {
-        int num = 0;
+    public static int getSomeOfDigit (int startNumber) {
+        int number = startNumber;
         int sum = 0;
-        while () {
-            if (number % 10 != 0) {
-                num = number % 10;
-                sum += num;
-            }
-            num++;
+        while (number > 0) {
+            int digit = (number % 10);
+            number = number / 10;
+            sum += digit;
         }
-        return false;
+        return sum;
     }
 
     public static void exercise001 () {
@@ -97,8 +95,8 @@ public class Task4 {
         System.out.println("Наш помощник посчитает сумму всех цифр введенного Вами числа");
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите, пожалуйста, число:");
-        int number = sc.nextInt();
-            System.out.println("Сумма всех цифр введенного Вами числа = " + arbitraryNumber(number));
+        int startNumber = sc.nextInt();
+            System.out.println("Сумма всех цифр введенного Вами числа = " + getSomeOfDigit(startNumber));
     }
 
     public static void main(String[] args) {
