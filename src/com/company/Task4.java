@@ -9,7 +9,7 @@ public class Task4 {
     // Задача 1. (Используя цикл while найти наибольшее из 10 чисел, вводимых пользователем)
     public static void exercise01() {
         System.out.println("Добрый день!");
-        System.out.println("Наш помощник вычислит максимальное из десяти введенных чисел:");
+        System.out.println("Наш помощник вычислит максимальное из десяти введенных чисел");
         Scanner sc = new Scanner(System.in);
         int i = 0;
         int max = 0;
@@ -42,6 +42,7 @@ public class Task4 {
     // Задача 3. (Пользователь вводит координаты центра окружности и ее радиус после чего ользователь вводит
     // координаты 5ти точек, определить сколько из них лежат в окружности (для определения рассеяний и проверок
     // сделать отдельные методы))
+
     public static void exercise03() {
 
     }
@@ -107,6 +108,9 @@ public class Task4 {
     }
 
     public static void main(String[] args) {
+        exercise01();
+        exercise02();
+        exercise04();
         exercise001();
     }
 }
