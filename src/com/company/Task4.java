@@ -39,13 +39,60 @@ public class Task4 {
         System.out.println("Сумма всех нечетных чисел из интервала 3....100 равна: " + sum);
     }
 
-    // Задача 3. (Пользователь вводит координаты центра окружности и ее радиус после чего ользователь вводит
+    // Задача 3. (Пользователь вводит координаты центра окружности и ее радиус после чего пользователь вводит
     // координаты 5ти точек, определить сколько из них лежат в окружности (для определения рассеяний и проверок
     // сделать отдельные методы))
 
-    public static void exercise03() {
-
+    /***
+     * Расчитывает расстояние между двумя точками
+     * @param xPoint1 - х координата первой точки
+     * @param yPoint1 - у координата первой точки
+     * @param xPoint2 - х координата второй точки
+     * @param yPoint2 - у координата второй точки
+     * @return - расстояние между точками
+     */
+    public static double distanceToPoint(double xPoint1, double yPoint1, double xPoint2, double yPoint2) {
+        double distance = Math.sqrt(Math.pow(xPoint1 - xPoint2, 2) + Math.pow(yPoint1 - yPoint2, 2));
+        return distance;
     }
+
+    /***
+     *
+     * @param xCenter - х координата центра окружности
+     * @param yCenter - у координата центра окружности
+     * @param radius - радиус окружности
+     * @param xPoint - х координата точки
+     * @param yPoint - у координата точки
+     * @return - внутренние границы окружности
+     */
+    public static boolean isInsideCircle(double xCenter, double yCenter, double radius, double xPoint, double yPoint) {
+        double insideCircle = distanceToPoint(xCenter, yCenter, xPoint, yPoint);
+        return insideCircle <= radius;
+    }
+
+    public static void exercise03() {
+        System.out.println("Добрый день!");
+        System.out.println("Наш помощник определит сколько точек лежит в окружности:");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите, пожалуйста, координаты центра окружности (X Y):");
+        int xCenter = sc.nextInt();
+        int yCenter = sc.nextInt();
+        System.out.println("Введите, пожалуйста, радиус окружности:");
+        int radius = sc.nextInt();
+        int numberPoint = 0;
+        int sumInsidePoint = 0;
+        while (numberPoint < 5) {
+            System.out.println("Введите, пожалуйста, координаты точки (X Y):");
+            int xPoint = sc.nextInt();
+            int yPoint = sc.nextInt();
+            if (isInsideCircle(xCenter, yCenter, radius, xPoint, yPoint)) {
+                sumInsidePoint++;
+            }
+            numberPoint++;
+        }
+        System.out.println("Количество точек лежащих в окружности = " + sumInsidePoint);
+    }
+
 
     // Задача 4. (Написать метод, который принимает число и возвращает true если оно простое и false - если нет)
 
@@ -110,6 +157,7 @@ public class Task4 {
     public static void main(String[] args) {
         exercise01();
         exercise02();
+        exercise03();
         exercise04();
         exercise001();
     }
