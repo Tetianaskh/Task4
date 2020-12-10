@@ -52,8 +52,7 @@ public class Task4 {
      * @return - расстояние между точками
      */
     public static double distanceToPoint(double xPoint1, double yPoint1, double xPoint2, double yPoint2) {
-        double distance = Math.sqrt(Math.pow(xPoint1 - xPoint2, 2) + Math.pow(yPoint1 - yPoint2, 2));
-        return distance;
+        return Math.sqrt(Math.pow(xPoint1 - xPoint2, 2) + Math.pow(yPoint1 - yPoint2, 2));
     }
 
     /***
@@ -66,8 +65,8 @@ public class Task4 {
      * @return - внутренние границы окружности
      */
     public static boolean isInsideCircle(double xCenter, double yCenter, double radius, double xPoint, double yPoint) {
-        double insideCircle = distanceToPoint(xCenter, yCenter, xPoint, yPoint);
-        return insideCircle <= radius;
+        double distanceToPoint = distanceToPoint(xCenter, yCenter, xPoint, yPoint);
+        return distanceToPoint <= radius;
     }
 
     public static void exercise03() {
